@@ -6,6 +6,7 @@ import NavButtons from './components/NavButtons'
 import '../src/assets/styles/global.scss'
 
 function App() {
+  //Para guardar el filtro, ya sea estudiantes o maestros
   const [filtro, setFiltro] = useState(0)
   return (
     <>

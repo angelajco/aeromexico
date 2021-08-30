@@ -1,20 +1,25 @@
+@use './global';
+
 .grid-flex{
-    display: flex;
+    display: global.$flex;
     flex-wrap: wrap;
 }
 .muestra-flex{
-    display: flex;
-    width: 50%;
-    margin: 2rem 0;
+    display: global.$flex;
+    flex-basis: 45%;
+    margin: 2rem 1rem;
     justify-content: center;
 }
+
+.favorito{
+    display: global.$flex;
+    justify-content: space-between;
+}
 .contenedor-foto{
-    width: 200px;
-    display: flex;
+    padding: 15px;
+    display: global.$flex;
     justify-content: center;
     align-items: center;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
 }
 .imagen-foto{
     width: 150px;
@@ -25,10 +30,7 @@
 }
 .card-informacion{
     background-color: #ffffff;
-    width: 300px;
     padding: 25px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
     p{
         margin-top: 0;
         margin-bottom: 5px;
@@ -43,6 +45,7 @@
     }
     .estado{
         font-weight: 300;
+        color: #999999;
     }
 }
 .gryffindor{
@@ -59,4 +62,33 @@
 }
 .sin-casa{
     background: linear-gradient(135deg, #A4A4A4 0%, #FFFFFF 100%,);
+}
+
+@media (max-width: 768px){
+    .muestra-flex{
+        flex-direction: column;
+    }
+    .contenedor-foto{
+        padding: 25px;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+    .card-informacion{
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    .card-informacion > p{
+        display: none;
+    }
+}
+
+@media (min-width: 769px){
+    .contenedor-foto{
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    .card-informacion{
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
 }

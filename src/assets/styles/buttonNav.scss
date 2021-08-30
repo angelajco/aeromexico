@@ -1,17 +1,35 @@
-.logo{
-  width: 500px;
-  height: 250px;
+@use './global';
+
+.contenedor-logo{
+  display: global.$flex;
+  justify-content: center;
+  margin-top: 200px;
+  .logo{
+    width: 250px;
+  }
 }
+
+.texto-filtro{
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
 .navbar-buttons{
-  display: flex;
+  display: global.$flex;
   justify-content: center;
 }
 .button-nav{
-  min-width: 18rem;
+  width: 18rem;
   height: 4.1875rem;
-  color: #fff;
+  color: #ffffff;
   background-color: rgba($color: #000000, $alpha: 0.6);
   border-color: #6B63B5;
   border-width: 0.2rem;
   margin: 2rem 3.5rem;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
 }
