@@ -1,10 +1,9 @@
 @use './global';
 
-/* The Modal (background) */
 .modal {
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 20px;
     left: 0;
     top: 0;
     width: 100%;
@@ -12,44 +11,82 @@
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
 }
-
 .modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 30%;
+    width: 40%;
 }
-
 .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-}
-  
+}  
 .close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
+.close:focus{
     cursor: pointer;
-  }
-
+}
+.form-modal label{
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.inputs-grises{
+    background-color: #f4f4f4;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    height: 45px;
+    width: 150px;
+    padding: 1px 2px;
+}
 .grupos-inputs{
     display: global.$flex;
     justify-content: space-between;
+    margin: 5px;
+    flex-wrap: wrap;
+
+    .primer-radio{
+        margin-right: 25px;
+    }
+
+    .contenedores-labels-radios{
+        margin: 4px;
+    }
 }
 .label-input{
     display: global.$flex;
     flex-direction: column;
+    margin-bottom: 15px;
+}
+.labels-radios{
+    margin-bottom: 10px;
 }
 .contenedor-fotografia{
     display: global.$flex;
+    margin-top: 25px;
+}
+.contenedor-boton-guardar{
+    text-align: center;
+    margin-top: 25px;
+}
+.boton-submit-guardar{
+    background: rgba(0, 0, 0, 0.6);
+    border: 4px solid #6B63B5;
+    color: #fff;
+    padding: 10px 50px;
+}
+.boton-submit-guardar:hover{
+    background: rgba(107, 99, 181, 0.6);
+}
+.boton-submit-guardar:active{
+    background: #6B63B5
 }
 
 
-
 .botones-flotantes{
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 0;
     right: 20%;
@@ -82,6 +119,9 @@
     display: global.$flex;
     justify-content: space-between;
 }
+.botones-absolutos{
+    z-index: 2;
+}
 .separador{
     border-color: #000;
 }
@@ -93,6 +133,7 @@
     padding-top: 20px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    z-index: 1;
 }
 .imagen-foto-miniatura{
     object-fit: cover;
@@ -102,8 +143,6 @@
     height: 30px;
 }
 .imagen-eliminar{
-    // width: 30px;
-    // height: 30px;
     cursor: pointer;
 }
 .grid-flex{
@@ -173,6 +212,15 @@
     background: linear-gradient(135deg, #A4A4A4 0%, #FFFFFF 100%,);
 }
 
+@media (max-width: 795px){
+    .grupos-inputs{
+        justify-content: center;
+    }
+    .contenedores-labels-radios{
+        margin-bottom: 15px !important;
+    }
+}
+
 @media (max-width: 768px){
     .muestra-flex{
         flex-direction: column;
@@ -188,6 +236,33 @@
     }
     .card-informacion > p{
         display: none;
+    }
+    #root{
+        position: relative;
+    }
+    .botones-flotantes{
+        bottom: 0;
+        width: 100%;
+        margin-bottom: -50px;
+        flex-direction: column-reverse;
+        align-items: center;
+        right: initial;
+        top: initial;
+        .boton-fav{
+            border-radius: initial;
+            border-top-left-radius: 15px;
+            box-shadow: 0 -5px 5px #555555;
+        }
+        .boton-agregar{
+            border-radius: initial;
+            border-top-right-radius: 15px;
+            box-shadow: 0 -5px 5px #555555;
+        }
+        .personajes-favoritos{
+            border-bottom-left-radius: initial;
+            border-bottom-right-radius: initial;
+            padding: 12px 40px;
+        }
     }
 }
 

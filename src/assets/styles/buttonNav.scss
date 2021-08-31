@@ -33,6 +33,12 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
 }
+.button-nav:hover{
+  background: rgba(107, 99, 181, 0.6);
+}
+.button-nav:active{
+  background: #6B63B5
+}
 
 @media (max-width: 639px){
   .button-nav{
