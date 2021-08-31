@@ -1,70 +1,12 @@
-# Getting Started with Create React App
+Las instrucciones para levantar el proyecto y correr pruebas unitarias.
+Para levantar el proyecto, este deberá ser descargado de la liga de GITHUB, se tendrá que montar e instalar de manera local en la máquina donde el usuario verá la aplicación. Una vez instaladas todas las dependencias y todo listo del proyecto, se ejecutara el comando "json-server" que se encuentra en el archivo "package.json". Esto levantará JSON-SERVER para que pueda ser visualizado a través del puerto 3001. Despúes de eso, se tendrá que ingresar a la liga de NETLIFY para poder ver el sistema, de otra manera si no se siguen los pasos anteriores, no se podrá visualizar los datos de la api de Harry Potter. Esta solución me ha funcionado perfecto para conectar el JSON-SERVER con NETLIFY, ya que de alguna manera, buscando en internet y en la documentación propia de NETLIFY, esto no es posible, pero parace ser que por el puerto 3001 se lográ conectar con la PC del usuario.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+• ¿Qué es lo que más te gustó de tu desarrollo?
+Aprender tecnologías como JSON-SERVER y REDUX, que si bien tenia conocimientos de otras herramientas similares (como back4app y useContext) siempre conocer de herramientas que ofrezcan otro tipo de servicio facilita el desarrollo en la diversidad de proyectos que pueden surgir.
 
-In the project directory, you can run:
+• Si hubieras tenido más tiempo ¿qué hubieras mejorado o qué más hubieras hecho?
+Terminar el detalle mínimo en el diseño responsivo con los botones de agregar y favoritos, y realizar la parte de pruebas unitarias. Igualmente terminar en la parte de el boton de favorito que se cambie cuando se elimina uno de la lista de favoritos.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+• Descríbenos un pain point o bug con el que te hayas encontrado y como lo solucionaste
+Realmente me encontré con varios al usar herramientas nuevas, ya que en la curva de aprendizaje es natural. En otros aspectos, si eran muy precisos los problemas, busca en internet alguna pista de como solucionarlo y lo iba aplicando a mi desarrollo.
