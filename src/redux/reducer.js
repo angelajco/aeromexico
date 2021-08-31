@@ -1,18 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const agregaFavorito = createSlice({
-  name: 'favoritos',
-  initialState: {
-    value: 0,
-    personajes: []
-  },
-  reducers: {
-    añade: (state) => {
-      state.value += 1
+    name: 'favoritos',
+    initialState: {
+        value: 0,
+        personajes: []
     },
-  },
+    reducers: {
+        añade: (state, valor) => {
+            state.value += 1;
+            state.personajes.push(valor)
+        },
+        borra: (state, valor) => {
+            let arrTemp = state.personajes.filter(dato => dato.payload.name !== valor.payload.name)
+            state.personajes = arrTemp;
+        }
+    },
 })
 
-export const { añade } = counterSlice.actions
+export const { añade, borra } = agregaFavorito.actions
 
-export default counterSlice.reducer
+export default agregaFavorito.reducer

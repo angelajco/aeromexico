@@ -3,6 +3,6 @@ import favoritos from './reducer'
 
 export default configureStore({
     reducer: {
-        favorito: favoritos,
+        favoritoReducer: favoritos,
       },
 })

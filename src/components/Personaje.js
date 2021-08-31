@@ -1,16 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Fragment } from 'react'
 import NoFavorito from '../assets/images/bookmark-outline.svg'
 import Favorito from '../assets/images/bookmark.svg'
 import FavoritoBlanco from '../assets/images/bookmark-white.svg'
 import Agregar from '../assets/images/account-plus.svg'
+import Borrar from '../assets/images/trash-can-outline.svg'
 
 import "../assets/styles/grid.scss"
 
 import { useSelector, useDispatch } from 'react-redux'
-import { añade } from '../redux/reducer'
+import { añade, borra } from '../redux/reducer'
 
 export default function Personaje(props) {
-
+    //Selectores de Redux
+    const contadorFavoritos = useSelector((state) => state.favoritoReducer.value)
+    const personajesFavoritos = useSelector((state) => state.favoritoReducer.personajes)
+    const dispatch = useDispatch()
     //Estado para mostrar el modal
     const [muestraModal, setMuestraModal] = useState(false)
 
@@ -22,17 +26,22 @@ export default function Personaje(props) {
 
     //Para mostrar si es favorito o no
     const clicFavorito = (dato) => {
-        setMuestraFavorito(false)
-        if (dato.seleccionado) {
-            dato.seleccionado = false;
+        console.log(dato, "datosaaaa")
+        if (contadorFavoritos > 4) {
+            alert("No puedes ingresar más de 5 personajes en favoritos")
         } else {
-            dato.seleccionado = true;
+            if (!dato.seleccionado) {
+                //Para cambiar el estado de la imagen
+                setMuestraFavorito(false)
+                dato.seleccionado = true;
+                //Contador para volver a renderizar la imagen
+                setTimeout(() => {
+                    setMuestraFavorito(true)
+                }, 1)
+                //Lanza el evento añade para agregar los personajes a favoritos
+                dispatch(añade(dato))
+            }
         }
-        //Contador para volver a renderizar la imagen
-        setTimeout(() => {
-            setMuestraFavorito(true)
-        }, 1)
-
     }
 
     //Se ejecuta cada vez que el filtro que se pasa por props cambia, si se da clic en los botones de filtro
@@ -51,6 +60,25 @@ export default function Personaje(props) {
                 (error) => console.log(error)
             )
     }, [props.filtro])
+
+    const borraElemento = (dato) => {
+        setMuestraFavorito(false)
+        // const arrTemp = informacion.map(personaje => {
+        //     if (personaje.name === dato.payload.name) {
+        //         console.log(personaje.seleccionado, "personaje")
+        //         personaje.seleccionado = false;
+        //         return personaje
+        //     }
+        // })
+
+        // console.log(arrTemp, "arrTemp")
+        // setInformacion(arrTemp);
+        //Contador para volver a renderizar la imagen
+        setTimeout(() => {
+            setMuestraFavorito(true)
+        }, 1)
+        dispatch(borra(dato.payload))
+    }
 
     return (
         <>
@@ -128,7 +156,28 @@ export default function Personaje(props) {
                         <img src={Agregar} alt="Agregar" />
                     </div>
                 </button>
+                {
+                    personajesFavoritos.length !== 0 && (
+                        <>
+                            <div className="personajes-favoritos">
+                                {
+                                    personajesFavoritos.map((valor, index) => (
+                                        <Fragment key={index}>
+                                            <div className="contenedor-favoritos-miniatura" key={index}>
+                                                <img className="imagen-foto-miniatura" src={valor.payload.image} />
+                                                <div>{valor.payload.name}</div>
+                                                <img className="imagen-eliminar" src={Borrar} onClick={() => borraElemento(valor)} />
+                                            </div>
+                                            <hr className="separador" />
+                                        </Fragment>
+                                    ))
+                                }
+                            </div>
+                        </>
+                    )
+                }
             </div>
+
             <div className="grid-flex">
                 {informacion.length !== 0 && (
                     informacion.map((dato, index) => (
