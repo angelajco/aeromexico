@@ -223,7 +223,6 @@
         margin-bottom: 15px !important;
     }
 }
-
 @media (max-width: 768px){
     .muestra-flex{
         flex-direction: column;
@@ -283,5 +282,11 @@
     .card-informacion{
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
+    }
+}
+
+@media (min-width: 992px){
+    .card-informacion{
+        min-width: 240px;
     }
 }

@@ -14,6 +14,7 @@ export default function NavButtons(props) {
                 {/* Recibo como prop el useState que cambia el valor del filtro */}
                 <button type="submit" className="button-nav" onClick={() => props.cambiaFiltro(0)}>ESTUDIANTES</button>
                 <button type="button" className="button-nav" onClick={() => props.cambiaFiltro(1)}>STAFF</button>
+                <button type="button" className="button-nav" onClick={() => props.cambiaFiltro(2)}>VIVOS</button>
             </div>
         </>
     )

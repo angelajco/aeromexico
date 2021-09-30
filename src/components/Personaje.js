@@ -50,8 +50,10 @@ export default function Personaje(props) {
     useEffect(() => {
         //Por defecto muestra a los estudiantes
         let url = "http://localhost:3001/hp-students";
-        if (props.filtro !== undefined && props.filtro !== 0) {
+        if (props.filtro !== undefined && props.filtro === 1) {
             url = "http://localhost:3001/hp-staff"
+        } else if(props.filtro !== undefined && props.filtro === 2){
+            url = "http://localhost:3001/hp-characters?alive=true"
         }
         setUrlDatos(url)
         //Se hace la petición
@@ -64,8 +66,7 @@ export default function Personaje(props) {
             )
     }, [props.filtro])
 
-
-
+    //Borra el elemento de favorito
     const borraElemento = (dato) => {
         setMuestraFavorito(false)
         // const arrTemp = informacion.map(personaje => {
@@ -276,7 +277,7 @@ export default function Personaje(props) {
                                     }
                                 </div>
                                 <p className="nombre">{dato.name}</p>
-                                <p><b>Cumpleaños:</b>&nbsp;{dato.dateOfBirth}</p>
+                                <p><b>Cumpleaños:</b>&nbsp;<span>{dato.dateOfBirth}</span></p>
                                 <p><b>G&eacute;nero:</b>&nbsp;<span className="datos-mayusculas">{dato.gender}</span></p>
                                 <p><b>Color de ojos:</b>&nbsp;<span className="datos-mayusculas">{dato.eyeColour}</span></p>
                                 <p><b>Color de cabello:</b>&nbsp;<span className="datos-mayusculas">{dato.hairColour}</span></p>

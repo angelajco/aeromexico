@@ -16,6 +16,7 @@ export const agregaFavorito = createSlice({
             //Borra al usuario que fue eliminado y vuelve a actualizar
             let arrTemp = state.personajes.filter(dato => dato.payload.name !== valor.payload.name)
             state.personajes = arrTemp;
+            state.value -= 1;
         }
     },
 })
